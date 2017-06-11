@@ -17,7 +17,7 @@ I want to know fi the number of times a word appears is a prime number.
 Psuedo Code for algorithm
 
 Load txt file
-format txt file ensuring white space is ignore
+format txt file ensuring white space is ignored
 split everything into an array by delimiter
 iterate through this array of words
 with each word:

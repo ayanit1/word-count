@@ -1,9 +1,10 @@
 describe("Counter", function(){
+  var Counter = require('../lib/counter')
 
   describe("when created", function(){
 
     it("has an empty wordArray", function(){
-      var counter = new Counter();
+      counter = new Counter();
       expect(counter.wordArray).toEqual([]);
     })
   });

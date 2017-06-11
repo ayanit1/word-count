@@ -7,5 +7,10 @@ describe("Counter", function(){
       counter = new Counter();
       expect(counter.wordArray).toEqual([]);
     })
+
+    it("has an empty wordOccurences hash", function(){
+      counter = new Counter();
+      expect(counter.wordOccurences).toEqual({});
+    })
   });
 });

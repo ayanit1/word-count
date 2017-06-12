@@ -65,8 +65,9 @@ Getting Started
 
 Improvements
 ============
-- A better way to output large amount of data in command line.
-- Add more testing on edge casing and improve error handling.
+- A better way to output large amount of data in command line, or better user interaction.
+- Add more testing on edge casing
+- Improve error handling.
 
 Author
 ======

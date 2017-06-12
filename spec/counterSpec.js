@@ -15,9 +15,16 @@ describe("Counter", function(){
   });
 
   describe("Counter.prototype", function(){
-    var data = "this test"
+    var data = "this test";
+    var data2 = "another      test";
 
     describe(".addToWordArray", function(){
+
+      it("eliminates white space", function(){
+        counter.addToWordArray(data2)
+        expect(counter.wordArray).toEqual(["another", "test"])
+      });
+
       it("separates a sentence and adds to wordArray", function(){
         counter.addToWordArray(data);
         expect(counter.wordArray).toEqual(["this", "test"])

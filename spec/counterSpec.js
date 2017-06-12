@@ -17,8 +17,8 @@ describe("Counter", function(){
   describe("Counter.prototype", function(){
     var data = "this test";
     var data2 = "another      test";
-    var data3 = "ignoring, punctuation!?"
-    var data4 = "test TEST Test"
+    var data3 = "ignoring, punctuation!?";
+    var data4 = "test TEST Test";
 
     describe(".formatWordArray", function(){
 
@@ -50,10 +50,14 @@ describe("Counter", function(){
     });
 
     describe(".isPrimeNumber", function(){
-      var value = 2
+      var value = 41;
+      var value2 = 25;
 
       it("returns true", function(){
         expect(counter.isPrimeNumber(value)).toBeTruthy;
+      })
+      it("returns false", function(){
+        expect(counter.isPrimeNumber(value2)).toBeFalsey;
       })
     });
   });

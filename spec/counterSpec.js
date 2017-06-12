@@ -50,7 +50,7 @@ describe("Counter", function(){
     });
 
     describe(".isPrimeNumber", function(){
-      var value = 1
+      var value = 2
 
       it("returns true", function(){
         expect(counter.isPrimeNumber(value)).toBeTruthy;

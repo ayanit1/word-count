@@ -6,15 +6,12 @@ describe("Counter", function(){
   });
 
   describe("when created", function(){
-
     it("has an empty wordArray", function(){
       expect(counter.wordArray).toEqual([]);
-    })
-
+    });
     it("has an empty wordOccurences hash", function(){
       expect(counter.wordOccurences).toEqual({});
-    })
-
+    });
   });
 
   describe("#addToWordArray", function(){
@@ -23,8 +20,6 @@ describe("Counter", function(){
     it("separates a sentence and adds to wordArray", function(){
       counter.addToWordArray(data);
       expect(counter.wordArray).toEqual(["this", "test"])
-    })
-
+    });
   });
-
 });

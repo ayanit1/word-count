@@ -18,6 +18,7 @@ describe("Counter", function(){
     var data = "this test";
     var data2 = "another      test";
     var data3 = "ignoring, punctuation!?"
+    var data4 = "test TEST Test"
 
     describe(".formatWordArray", function(){
 
@@ -25,12 +26,10 @@ describe("Counter", function(){
         counter.formatWordArray(data2);
         expect(counter.wordArray).toEqual(["another", "test"])
       });
-
       it("ignores punctuation", function(){
         counter.formatWordArray(data3);
         expect(counter.wordArray).toEqual(["ignoring", "punctuation"])
       });
-
       it("separates a sentence and adds to wordArray", function(){
         counter.formatWordArray(data);
         expect(counter.wordArray).toEqual(["this", "test"])
@@ -42,6 +41,11 @@ describe("Counter", function(){
         counter.formatWordArray(data);
         counter.countWords();
         expect(counter.wordOccurences).toEqual({"this":1, "test":1})
+      });
+      it("ignores capitalisation", function(){
+        counter.formatWordArray(data4);
+        counter.countWords();
+        expect(counter.wordOccurences).toEqual({"test":3})
       });
     });
   });

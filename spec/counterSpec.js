@@ -20,7 +20,7 @@ describe("Counter", function(){
     var data = "this test"
 
     it("separates a sentence and adds to wordArray", function(){
-      counter.formatWordArray(data);
+      counter.addWordArray(data);
       expect(counter.wordArray).toEqual(["this", "test"])
     })
   });

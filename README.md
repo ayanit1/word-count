@@ -56,8 +56,8 @@ Getting Started
 - ```npm install```
 
 ### How to use
-- run ```node lib/app.js lib/data/test.txt``` (for smaller scale example)
-- run ```node lib/app.js lib/data/railway-children-by-e-nesbit.txt``` (output too large for commandline)
+- run ```node lib/app.js lib/data/test.txt``` (for a smaller scale example)
+- run ```node lib/app.js lib/data/railway-children-by-e-nesbit.txt``` (output too large for command line)
 
 
 ### Running Tests
@@ -66,7 +66,7 @@ Getting Started
 Improvements
 ============
 - A better way to output large amount of data in command line.
-- Test more edge casing.  
+- Test more edge casing. 
 
 Author
 ======

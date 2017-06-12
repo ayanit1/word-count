@@ -1,5 +1,5 @@
 describe("Counter", function(){
-  var Counter = require('../lib/counter')
+  var Counter = require("../lib/counter")
 
   beforeEach(function(){
     counter = new Counter
@@ -14,12 +14,24 @@ describe("Counter", function(){
     });
   });
 
-  describe("#addToWordArray", function(){
-    var data = "this test"
+
+  describe(".addToWordArray", function(){
+    var data = "this test";
 
     it("separates a sentence and adds to wordArray", function(){
       counter.addToWordArray(data);
       expect(counter.wordArray).toEqual(["this", "test"])
     });
   });
+
+  describe(".countWords",function(){
+    var data = "this test";
+
+    it("counts the words in wordArray and displays results in wordOccurences", function(){
+      counter.addToWordArray(data);
+      counter.countWords();
+      expect(counter.wordOccurences).toEqual({"this":1, "test":1})
+    })
+  })
+
 });

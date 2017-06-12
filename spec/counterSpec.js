@@ -7,11 +7,14 @@ describe("Counter", function(){
 
   describe("when created", function(){
     it("has an empty wordArray", function(){
-      expect(counter.wordArray).toEqual([]);
+      expect(counter.wordArray).toEqual([])
     });
     it("has an empty wordOccurences hash", function(){
-      expect(counter.wordOccurences).toEqual({});
+      expect(counter.wordOccurences).toEqual({})
     });
+    it("has an empty wordOccurencesPrime hash", function(){
+      expect(counter.wordOccurencesPrime).toEqual({})
+    })
   });
 
   describe("Counter.prototype", function(){
@@ -54,11 +57,19 @@ describe("Counter", function(){
       var value2 = 25;
 
       it("returns true", function(){
-        expect(counter.isPrimeNumber(value)).toBeTruthy;
+        expect(counter.isPrimeNumber(value)).toBeTruthy
       })
       it("returns false", function(){
-        expect(counter.isPrimeNumber(value2)).toBeFalsey;
+        expect(counter.isPrimeNumber(value2)).toBeFalsey
       })
     });
+
+    describe(".addPrime", function(){
+      it("evaluates prime numbers and displays results in wordOccurencePrime", function(){
+        counter.formatWordArray(data4);
+        counter.addPrime();
+        expect(counter.wordOccurencePrime).toEqual({"test":[3, true]})
+      })
+    })
   });
 });

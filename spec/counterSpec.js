@@ -1,20 +1,20 @@
 describe("Counter", function(){
-  var Counter = require("../lib/counter")
+  var Counter = require("../lib/counter");
 
   beforeEach(function(){
-    counter = new Counter
+    counter = new Counter();
   });
 
   describe("when created", function(){
     it("has an empty wordArray", function(){
-      expect(counter.wordArray).toEqual([])
+      expect(counter.wordArray).toEqual([]);
     });
     it("has an empty wordOccurrences hash", function(){
-      expect(counter.wordOccurrences).toEqual({})
+      expect(counter.wordOccurrences).toEqual({});
     });
     it("has an empty wordOccurrencesWithPrime hash", function(){
-      expect(counter.wordOccurrencesWithPrime).toEqual({})
-    })
+      expect(counter.wordOccurrencesWithPrime).toEqual({});
+    });
   });
 
   describe("Counter.prototype", function(){
@@ -22,21 +22,21 @@ describe("Counter", function(){
     var data2 = "another      test";
     var data3 = "ignoring, punctuation!?";
     var data4 = "test TEST Test";
-    var data5 = 'yes yes yes, no no no no no no!'
+    var data5 = 'yes yes yes, no no no no no no!';
 
     describe(".formatWordArray", function(){
 
       it("ignores white space", function(){
         counter.formatWordArray(data2);
-        expect(counter.wordArray).toEqual(["another", "test"])
+        expect(counter.wordArray).toEqual(["another", "test"]);
       });
       it("ignores punctuation", function(){
         counter.formatWordArray(data3);
-        expect(counter.wordArray).toEqual(["ignoring", "punctuation"])
+        expect(counter.wordArray).toEqual(["ignoring", "punctuation"]);
       });
       it("separates a sentence and adds to wordArray", function(){
         counter.formatWordArray(data);
-        expect(counter.wordArray).toEqual(["this", "test"])
+        expect(counter.wordArray).toEqual(["this", "test"]);
       });
     });
 
@@ -44,12 +44,12 @@ describe("Counter", function(){
       it("counts the words in wordArray and displays results in wordOccurrences", function(){
         counter.formatWordArray(data);
         counter.countWords();
-        expect(counter.wordOccurrences).toEqual({"this":1, "test":1})
+        expect(counter.wordOccurrences).toEqual({"this":1, "test":1});
       });
       it("ignores capitalisation", function(){
         counter.formatWordArray(data4);
         counter.countWords();
-        expect(counter.wordOccurrences).toEqual({"test":3})
+        expect(counter.wordOccurrences).toEqual({"test":3});
       });
     });
 
@@ -58,11 +58,11 @@ describe("Counter", function(){
       var value2 = 25;
 
       it("returns true", function(){
-        expect(counter.isPrimeNumber(value)).toBeTruthy
-      })
+        expect(counter.isPrimeNumber(value)).toBeTruthy();
+      });
       it("returns false", function(){
-        expect(counter.isPrimeNumber(value2)).toBeFalsey
-      })
+        expect(counter.isPrimeNumber(value2)).toBeFalsy();
+      });
     });
 
     describe(".addPrime", function(){
@@ -70,8 +70,8 @@ describe("Counter", function(){
         counter.formatWordArray(data5);
         counter.countWords();
         counter.addPrime();
-        expect(counter.wordOccurrencesWithPrime).toEqual({"yes":[3, true], "no":[6, false]})
-      })
-    })
+        expect(counter.wordOccurrencesWithPrime).toEqual({"yes":[3, true], "no":[6, false]});
+      });
+    });
   });
 });

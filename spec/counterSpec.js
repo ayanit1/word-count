@@ -14,24 +14,22 @@ describe("Counter", function(){
     });
   });
 
+  describe("Counter.prototype", function(){
+    var data = "this test"
 
-  describe(".addToWordArray", function(){
-    var data = "this test";
+    describe(".addToWordArray", function(){
+      it("separates a sentence and adds to wordArray", function(){
+        counter.addToWordArray(data);
+        expect(counter.wordArray).toEqual(["this", "test"])
+      });
+    });
 
-    it("separates a sentence and adds to wordArray", function(){
-      counter.addToWordArray(data);
-      expect(counter.wordArray).toEqual(["this", "test"])
+    describe(".countWords",function(){
+      it("counts the words in wordArray and displays results in wordOccurences", function(){
+        counter.addToWordArray(data);
+        counter.countWords();
+        expect(counter.wordOccurences).toEqual({"this":1, "test":1})
+      });
     });
   });
-
-  describe(".countWords",function(){
-    var data = "this test";
-
-    it("counts the words in wordArray and displays results in wordOccurences", function(){
-      counter.addToWordArray(data);
-      counter.countWords();
-      expect(counter.wordOccurences).toEqual({"this":1, "test":1})
-    })
-  })
-
 });

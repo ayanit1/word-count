@@ -9,11 +9,11 @@ describe("Counter", function(){
     it("has an empty wordArray", function(){
       expect(counter.wordArray).toEqual([])
     });
-    it("has an empty wordOccurences hash", function(){
-      expect(counter.wordOccurences).toEqual({})
+    it("has an empty wordOccurrences hash", function(){
+      expect(counter.wordOccurrences).toEqual({})
     });
-    it("has an empty wordOccurencesWithPrime hash", function(){
-      expect(counter.wordOccurencesWithPrime).toEqual({})
+    it("has an empty wordOccurrencesWithPrime hash", function(){
+      expect(counter.wordOccurrencesWithPrime).toEqual({})
     })
   });
 
@@ -41,15 +41,15 @@ describe("Counter", function(){
     });
 
     describe(".countWords", function(){
-      it("counts the words in wordArray and displays results in wordOccurences", function(){
+      it("counts the words in wordArray and displays results in wordOccurrences", function(){
         counter.formatWordArray(data);
         counter.countWords();
-        expect(counter.wordOccurences).toEqual({"this":1, "test":1})
+        expect(counter.wordOccurrences).toEqual({"this":1, "test":1})
       });
       it("ignores capitalisation", function(){
         counter.formatWordArray(data4);
         counter.countWords();
-        expect(counter.wordOccurences).toEqual({"test":3})
+        expect(counter.wordOccurrences).toEqual({"test":3})
       });
     });
 
@@ -66,11 +66,11 @@ describe("Counter", function(){
     });
 
     describe(".addPrime", function(){
-      it("evaluates prime numbers and displays results in wordOccurencesWithPrime", function(){
+      it("evaluates prime numbers and displays results in wordOccurrencesWithPrime", function(){
         counter.formatWordArray(data5);
         counter.countWords();
         counter.addPrime();
-        expect(counter.wordOccurencesWithPrime).toEqual({"yes":[3, true], "no":[6, false]})
+        expect(counter.wordOccurrencesWithPrime).toEqual({"yes":[3, true], "no":[6, false]})
       })
     })
   });

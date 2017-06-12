@@ -32,7 +32,7 @@ With each word:
 
 ### Part 2
 A prime number is a number that is divisible only by itself and 1
-Have a method that returns boolean if the value given is a prime number
+Have a method that returns true if the value given is a prime number
 Value given in hash in part one to be evaluated
 New hash e.g. { "word":[number, boolean] }  
 

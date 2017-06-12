@@ -19,27 +19,27 @@ describe("Counter", function(){
     var data2 = "another      test";
     var data3 = "ignoring, punctuation!?"
 
-    describe(".addToWordArray", function(){
+    describe(".formatWordArray", function(){
 
       it("eliminates white space", function(){
-        counter.addToWordArray(data2);
+        counter.formatWordArray(data2);
         expect(counter.wordArray).toEqual(["another", "test"])
       });
 
       it("ignores punctuation", function(){
-        counter.addToWordArray(data3);
+        counter.formatWordArray(data3);
         expect(counter.wordArray).toEqual(["ignoring", "punctuation"])
       });
 
       it("separates a sentence and adds to wordArray", function(){
-        counter.addToWordArray(data);
+        counter.formatWordArray(data);
         expect(counter.wordArray).toEqual(["this", "test"])
       });
     });
 
     describe(".countWords",function(){
       it("counts the words in wordArray and displays results in wordOccurences", function(){
-        counter.addToWordArray(data);
+        counter.formatWordArray(data);
         counter.countWords();
         expect(counter.wordOccurences).toEqual({"this":1, "test":1})
       });

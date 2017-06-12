@@ -17,12 +17,18 @@ describe("Counter", function(){
   describe("Counter.prototype", function(){
     var data = "this test";
     var data2 = "another      test";
+    var data3 = "ignoring, punctuation!?"
 
     describe(".addToWordArray", function(){
 
       it("eliminates white space", function(){
-        counter.addToWordArray(data2)
+        counter.addToWordArray(data2);
         expect(counter.wordArray).toEqual(["another", "test"])
+      });
+
+      it("ignores punctuation", function(){
+        counter.addToWordArray(data3);
+        expect(counter.wordArray).toEqual(["ignoring", "punctuation"])
       });
 
       it("separates a sentence and adds to wordArray", function(){

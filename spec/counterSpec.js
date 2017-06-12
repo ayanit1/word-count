@@ -22,7 +22,7 @@ describe("Counter", function(){
 
     describe(".formatWordArray", function(){
 
-      it("eliminates white space", function(){
+      it("ignores white space", function(){
         counter.formatWordArray(data2);
         expect(counter.wordArray).toEqual(["another", "test"])
       });
@@ -36,7 +36,7 @@ describe("Counter", function(){
       });
     });
 
-    describe(".countWords",function(){
+    describe(".countWords", function(){
       it("counts the words in wordArray and displays results in wordOccurences", function(){
         counter.formatWordArray(data);
         counter.countWords();
@@ -47,6 +47,14 @@ describe("Counter", function(){
         counter.countWords();
         expect(counter.wordOccurences).toEqual({"test":3})
       });
+    });
+
+    describe(".isPrimeNumber", function(){
+      var value = 1
+
+      it("returns true", function(){
+        expect(counter.isPrimeNumber(value)).toBeTruthy;
+      })
     });
   });
 });

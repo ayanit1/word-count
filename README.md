@@ -25,6 +25,7 @@ with each word:
    - else add 1 to the counter value
 
 part 2
+A prime number is a number that is divisible only by itself and 1
 have a method that returns boolean if the value given is a prime number
 value given in hash in part one to be evaluated
 new hash e.g. { "word":[number, boolean] }  

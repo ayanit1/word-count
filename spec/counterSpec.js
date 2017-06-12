@@ -12,8 +12,8 @@ describe("Counter", function(){
     it("has an empty wordOccurences hash", function(){
       expect(counter.wordOccurences).toEqual({})
     });
-    it("has an empty wordOccurencesPrime hash", function(){
-      expect(counter.wordOccurencesPrime).toEqual({})
+    it("has an empty wordOccurencesWithPrime hash", function(){
+      expect(counter.wordOccurencesWithPrime).toEqual({})
     })
   });
 
@@ -22,6 +22,7 @@ describe("Counter", function(){
     var data2 = "another      test";
     var data3 = "ignoring, punctuation!?";
     var data4 = "test TEST Test";
+    var data5 = 'yes yes yes, no no no no no no!'
 
     describe(".formatWordArray", function(){
 
@@ -65,10 +66,11 @@ describe("Counter", function(){
     });
 
     describe(".addPrime", function(){
-      it("evaluates prime numbers and displays results in wordOccurencePrime", function(){
-        counter.formatWordArray(data4);
+      it("evaluates prime numbers and displays results in wordOccurencesWithPrime", function(){
+        counter.formatWordArray(data5);
+        counter.countWords();
         counter.addPrime();
-        expect(counter.wordOccurencePrime).toEqual({"test":[3, true]})
+        expect(counter.wordOccurencesWithPrime).toEqual({"yes":[3, true], "no":[6, false]})
       })
     })
   });
